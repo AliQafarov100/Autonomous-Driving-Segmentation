@@ -1,0 +1,15 @@
+artifact_uri: /content/drive/MyDrive/Deep Learning Projects/Autonomous driving semantic
+  segmentation/mlruns/145316421161226487/dce654c1db8b437a9421577c8ed45a57/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '145316421161226487'
+lifecycle_stage: active
+run_id: dce654c1db8b437a9421577c8ed45a57
+run_name: trusting-boar-557
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1775080606317
+status: 1
+tags: []
+user_id: root
