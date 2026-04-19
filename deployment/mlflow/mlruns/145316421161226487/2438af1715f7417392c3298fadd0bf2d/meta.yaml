@@ -1,0 +1,15 @@
+artifact_uri: /content/drive/MyDrive/Deep Learning Projects/Autonomous driving semantic
+  segmentation/mlruns/145316421161226487/2438af1715f7417392c3298fadd0bf2d/artifacts
+end_time: 1776031447892
+entry_point_name: ''
+experiment_id: '145316421161226487'
+lifecycle_stage: active
+run_id: 2438af1715f7417392c3298fadd0bf2d
+run_name: UNet
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1776016531236
+status: 4
+tags: []
+user_id: root

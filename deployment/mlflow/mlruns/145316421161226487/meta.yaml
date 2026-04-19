@@ -1,0 +1,8 @@
+artifact_location: /content/drive/MyDrive/Deep Learning Projects/Autonomous driving
+  semantic segmentation/mlruns/145316421161226487
+creation_time: 1774207182503
+experiment_id: '145316421161226487'
+last_update_time: 1774207182503
+lifecycle_stage: active
+name: AD_segmentation
+workspace: default

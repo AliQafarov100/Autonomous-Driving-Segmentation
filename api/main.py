@@ -1,18 +1,19 @@
 from fastapi import FastAPI, UploadFile, File
+from fastapi.responses import StreamingResponse
 import torch
 import numpy as np
 from PIL import Image
 import io
 
 
-from src.model import Unet
+from src.model import UNet
 
 app = FastAPI()
 
 # Load model
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
-model = Unet()
+model = UNet()
 model.load_state_dict(torch.load("models/unet.pth", map_location=device))
 model.to(device)
 model.eval()
@@ -42,7 +43,10 @@ async def predict(file: UploadFile = File(...)):
     
     mask = postprocess(pred)
 
-    return {
-        "mask_shape": mask.shape,
-        "unique_classes": np.unique(mask).tolist()
-    }
+    mask_img = Image.fromarray(mask)
+
+    buf = io.BytesIO()
+    mask_img.save(buf, format="PNG")
+    buf.seek(0)
+
+    return StreamingResponse(buf, media_type="image/png")
