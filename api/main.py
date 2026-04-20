@@ -18,6 +18,31 @@ model.load_state_dict(torch.load("models/unet.pth", map_location=device))
 model.to(device)
 model.eval()
 
+def colorize(mask):
+    COLORS = {
+        0: (0, 0, 0),
+        1: (128, 0, 0),
+        2: (0, 128, 0),
+        3: (128, 128, 0),
+        4: (0, 0, 128),
+        5: (128, 0, 128),
+        6: (0, 128, 128),
+        7: (128, 128, 128),
+        8: (64, 0, 0),
+        9: (192, 0, 0),
+        10: (64, 128, 0),
+        11: (192, 128, 0),
+        12: (64, 0, 128),
+    }
+
+    h, w = mask.shape
+    color_mask = np.zeros((h, w, 3), dtype=np.uint8)
+
+    for cls, color in COLORS.items():
+        color_mask[mask == cls] = color
+
+    return color_mask
+
 def preprocess(image: Image.Image):
     image = image.resize((256, 256))
     image = np.array(image) / 255.0
@@ -42,6 +67,7 @@ async def predict(file: UploadFile = File(...)):
         pred = model(x)
     
     mask = postprocess(pred)
+    mask = colorize(mask)
 
     mask_img = Image.fromarray(mask)
 
