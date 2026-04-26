@@ -61,6 +61,15 @@ Open:
 http://localhost:8888/docs
 ```
 
+## Local Setup
+```
+pip install -r requirements.txt
+```
+Train model:
+```
+python src/train.py
+```
+
 ## Tech Stack
 - PyTorch
 - FastAPI
