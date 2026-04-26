@@ -21,4 +21,19 @@
 ## Results
 | Model            | Paramaters | Accuracy   |
 |------------------|------------|------------|
-| Unet             | 79.5%      | ~31M       |
+| Unet             | ~31M       | ~76.07%    |
+The model successfully learns meaningful segmentation across multiple classes.
+
+## Experiment Tracking
+Experiments are tracked using MLflow:
+- Parameters (learning rate, batch size, etc.)
+- Metrics (loss, Dice score)
+- Training runs
+Run MLflow UI:
+ ```bash
+    mlflow ui
+   ```
+Then open:
+  ```
+  http://localhost:5000
+  ```
