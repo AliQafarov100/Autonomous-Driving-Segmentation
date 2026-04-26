@@ -18,3 +18,7 @@
 - Optimizer: AdamW
 - Scheduler: ReduceLROnPlateau / OneCycleLR
 
+## Results
+| Model            | Paramaters | Accuracy   |
+|------------------|------------|------------|
+| Unet             | 79.5%      | ~31M       |
