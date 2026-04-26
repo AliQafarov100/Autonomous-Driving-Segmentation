@@ -25,7 +25,7 @@
 The model successfully learns meaningful segmentation across multiple classes.
 
 ## Experiment Tracking
-Experiments are tracked using MLflow:
+### Experiments are tracked using MLflow:
 - Parameters (learning rate, batch size, etc.)
 - Metrics (loss, Dice score)
 - Training runs
@@ -37,3 +37,33 @@ Then open:
   ```
   http://localhost:5000
   ```
+
+## API (FastAPI)
+The trained model is deployed as an API for inference.
+
+### Endpoint
+```
+POST /predict_image
+```
+### Input
+- Image file
+### Output
+- Segmentation mask(colorized)
+
+## Docker
+Build and run the API:
+```
+docker build -t fastapi .
+docker run -p 8888:8000 fastapi
+```
+Open:
+```
+http://localhost:8888/docs
+```
+
+## Tech Stack
+- PyTorch
+- FastAPI
+- MLflow
+- Docker
+- NumPy / PIL
