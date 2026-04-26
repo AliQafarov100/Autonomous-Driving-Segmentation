@@ -8,21 +8,22 @@
 ## Project Structure
 autonomous-driving-segmentation/
 │
-├── data/                 # dataset (not included in repo)
-├── models/               # trained models (.pth)
+├── data/ # dataset (not included in repo)
+├── models/ # trained models (.pth)
+│
 ├── src/
-│   ├── dataset.py
-│   ├── model.py
-│   ├── engine.py
-│   ├── losses.py
-│   ├── metrics.py
-│   └── transforms.py
+│ ├── dataset.py
+│ ├── model.py
+│ ├── engine.py
+│ ├── losses.py
+│ ├── metrics.py
+│ └── transforms.py
 │
 ├── api/
-│   └── main.py           # FastAPI inference service
+│ └── main.py # FastAPI inference service
 │
 ├── configs/
-│   └── config.yaml
+│ └── config.yaml
 │
 ├── Dockerfile
 ├── docker-compose.yml
